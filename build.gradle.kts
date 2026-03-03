@@ -20,7 +20,22 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
+    // boot starter
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-mail")
+
+    // ses lib
+    implementation("software.amazon.awssdk:ses:2.22.13")
+    implementation("software.amazon.awssdk:auth:2.22.13")
+    implementation("software.amazon.awssdk:regions:2.22.13")
+
+    // swagger-ui
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.0")
+
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
