@@ -1,1 +1,60 @@
-spring.application.name=aws-ses
+server:
+  port: 8000
+  compression:
+    enabled: true
+    min-response-size: 256
+    mime-types:
+      - text/html
+      - text/xml
+      - text/plain
+      - text/css
+      - text/javascript
+      - application/javascript
+      - application/json
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: aws-ses
+  profiles:
+    active: local
+  servlet:
+    encoding:
+      enabled: true
+      charset: UTF-8
+
+# Logging
+logging:
+  config: classpath:logback-file.xml
+  pattern:
+    console: "%clr([%d{yyyy-MM-dd HH:mm:ss.SSS XXX, Asia/Seoul}]){faint} %clr([%5p]) %clr([%15.15t]){faint} %clr([%-40.40logger{39}]){cyan} %clr(:){faint} %m%n"
+  level:
+    root: INFO
+    org.springframework: WARN
+    com.example.cloudwatch: INFO
+    com.amazonaws.util.EC2MetadataUtils: ERROR
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    display-request-duration: true
+  api-docs:
+    path: /api-docs
+    groups:
+      enabled: true
+  show-actuator: true
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+
+swagger:
+  info:
+    title: AWS SES TEST API
+    version: V1
+    description: a test API is available.
+
+cloud:
+  aws:
+    region: ap-northeast-2
