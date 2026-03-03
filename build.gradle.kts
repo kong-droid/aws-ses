@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
     kotlin("jvm") version "2.2.21"
     kotlin("plugin.spring") version "2.2.21"
@@ -7,7 +9,6 @@ plugins {
 
 group = "com.example.ses"
 version = "0.0.1-SNAPSHOT"
-description = "aws-ses"
 
 java {
     toolchain {
@@ -24,9 +25,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-mail")
+    implementation("org.springframework.boot:spring-boot-starter-aspectj")
 
     // ses lib
     implementation("software.amazon.awssdk:ses:2.22.13")
@@ -48,6 +49,11 @@ kotlin {
     }
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
+tasks.apply {
+    withType<BootJar> {
+        enabled = true
+    }
+    withType<Test> {
+        useJUnitPlatform()
+    }
 }
