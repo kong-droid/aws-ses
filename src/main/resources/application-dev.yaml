@@ -1,8 +1,9 @@
-logging:
-  file:
-    path: your file path.
-
 cloud:
   aws:
     access-key: your-access-key.
     secret-key: your-secret-key.
+    email: your email account.
+
+logging:
+  file:
+    path: your file path.
