@@ -22,6 +22,7 @@ spring:
     encoding:
       enabled: true
       charset: UTF-8
+      force: true
 
 # Logging
 logging:
@@ -53,7 +54,7 @@ swagger:
   info:
     title: AWS SES TEST API
     version: V1
-    description: a test API is available.
+    description: 메일 발송 시스템 테스트
 
 cloud:
   aws:
