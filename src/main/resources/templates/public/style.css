@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Reset ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Body ── */
+body {
+    background-color: #f2f2f2;
+    font-family: 'Noto Serif KR', serif;
+    padding: 40px 20px;
+}
+
+/* ── Wrapper ── */
+.email-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+/* ── Header ── */
+.email-header {
+    background: #0c6954;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+}
+
+.tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    color: #0c6954;
+    background: #fff;
+}
+
+/* ── Hero ── */
+.email-hero {
+    padding: 48px 40px 36px;
+    border-bottom: 1px solid #eee;
+}
+
+.hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: #0c6954;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.hero-divider {
+    width: 40px;
+    height: 2px;
+    background: #0c6954;
+    margin-bottom: 20px;
+}
+
+.hero-body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* ── Content ── */
+.email-content {
+    padding: 36px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.content-section {
+    margin-bottom: 28px;
+}
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: #0c6954;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* ── Error Block (BUG only) ── */
+.error-block {
+    background: #f7f7f7;
+    border-left: 2px solid #0c6954;
+    padding: 14px 18px;
+    margin-top: 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+}
+
+/* ── Footer ── */
+.email-footer {
+    padding: 24px 40px;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #aaa;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.footer-meta {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.08em;
+}
