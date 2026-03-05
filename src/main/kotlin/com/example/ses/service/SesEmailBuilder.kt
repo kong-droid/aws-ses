@@ -9,10 +9,6 @@ import software.amazon.awssdk.services.ses.model.SendEmailRequest
 
 @Component
 class SesEmailBuilder {
-    /**
-     * TODO
-     * apply subject, template
-     **/
     fun sendEmailRequest(sender: String, to: String, subject: String, body: String) : SendEmailRequest =
         SendEmailRequest.builder()
             .source(sender)
@@ -26,7 +22,7 @@ class SesEmailBuilder {
                     .subject(Content.builder().data(subject).build())
                     .body(
                         Body.builder()
-                            .text(Content.builder().data(body).build())
+                            .html(Content.builder().data(body).charset("UTF-8").build())
                             .build()
                     )
                     .build()
@@ -55,7 +51,7 @@ class SesEmailBuilder {
                     .subject(Content.builder().data(subject).build())
                     .body(
                         Body.builder()
-                            .text(Content.builder().data(body).build())
+                            .html(Content.builder().data(body).charset("UTF-8").build())
                             .build()
                     )
                     .build()

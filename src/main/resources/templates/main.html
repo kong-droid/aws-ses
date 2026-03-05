@@ -3,22 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
-    <link rel="stylesheet" href="public/style.css">
+    <title th:text="${type}"></title>
 </head>
-<body>
-<div class="email-wrapper">
-    <div class="email-header">
-        <span class="brand">Kong-droid</span>
-        <span class="tag">Main</span>
-    </div>
+<body style="margin:0; padding:40px 20px; background-color:#f2f2f2; font-family:Georgia, serif;">
 
-    <!-- TODO :::: Additional cleanup of HTML tags when integrated with the service. -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td align="left">
+            <table width="600" cellpadding="0" cellspacing="0" border="0"
+                   style="background:#fff; border:1px solid #ddd;">
 
-    <div class="email-footer">
-        <span class="footer-brand">Kong-droid</span>
-        <span class="footer-meta">© 2026 Kong-droid. All rights reserved.</span>
-    </div>
-</div>
+                <!-- Header -->
+                <tr>
+                    <td style="background:#0c6954; padding:28px 40px;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="font-family:monospace; font-size:13px; letter-spacing:0.2em; color:rgba(255,255,255,0.6); text-transform:uppercase;">
+                                    Kong-droid
+                                </td>
+                                <td align="right">
+                                    <span th:text="${type}"
+                                          style="font-family:monospace; font-size:11px; letter-spacing:0.15em; padding:4px 10px; text-transform:uppercase; color:#0c6954; background:#fff; display:inline-block;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Body -->
+                <tr th:if="${type == 'WELCOME'}">
+                    <td th:include="body/welcome.html"></td>
+                </tr>
+                <tr th:if="${type == 'HELLO_WORLD'}">
+                    <td th:include="body/hello-world.html"></td>
+                </tr>
+                <tr th:if="${type == 'BUG'}">
+                    <td th:include="body/bug.html"></td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td style="padding:24px 40px; background:#f7f7f7;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="font-family:monospace; font-size:11px; color:#aaa; letter-spacing:0.15em; text-transform:uppercase;">
+                                    Kong-droid
+                                </td>
+                                <td align="right"
+                                    style="font-family:monospace; font-size:10px; color:#bbb; letter-spacing:0.08em;">©
+                                    2026 Kong-droid. All rights reserved.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+
 </body>
 </html>
